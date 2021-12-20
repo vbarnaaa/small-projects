@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+:root {
+    --primary-color: #03A9F4;
+    --border-radius: 5px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='80' patternTransform='scale(4) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M-5 5L5.1 15 15 5l10 10'  stroke-linecap='square' stroke-width='2' stroke='hsla(258.5,59.4%,59.4%,1)' fill='none'/><path d='M-5 25L5.1 35 15 25l10 10'  stroke-linecap='square' stroke-width='2' stroke='hsla(339.6,82.2%,51.6%,1)' fill='none'/><path d='M-5 45L5.1 55 15 45l10 10'  stroke-linecap='square' stroke-width='2' stroke='hsla(198.7,97.6%,48.4%,1)' fill='none'/><path d='M-5 65L5.1 75 15 65l10 10'  stroke-linecap='square' stroke-width='2' stroke='hsla(47,80.9%,61%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+    font-family: Karla, sans-serif;
+}
+
+h1 {
+    color: white;
+    padding: 20px;
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    width: 275px;
+    margin: 20px auto 10px;
+    user-select: none;
+}
+
+h1:hover {
+    background-color: rgb(0 0 0 / 90%); 
+}
+
+/* Bookmarks */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    background: rgb(0 0 0 / 50%);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin: 10px;
+}
+
+.item:hover {
+    background: rgb(0 0 0 / 60%); 
+}
+
+a {
+    font-size: 20px;
+    //font-weight: bold;
+    //text-transform: uppercase;
+}
+
+a:link, 
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+
+.fa-trash-alt,
+.fa-times {
+    color: white;
+    font-size: 14px;
+    float: right;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.name {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.name img {
+    height: 20px;
+    width: 20px;
+    vertical-align: sub;
+    margin-right: 5px;
+}
+
+/* Modal */
+
+.modal-container {
+    background: rgb(0 0 0 / 60%); 
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.show-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: white;
+    box-shadow: 0 0 10px rgb(0 0 0 / 80%); 
+    max-width: 95%;
+    width: 500px;
+    animation: modalopen 1s;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+.close-icon {
+    float: right;
+    columns: white;
+    font-size: 24px;
+    position: relative;
+    top: 13px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: whitesmoke;
+    padding: 15px;
+}
+
+h3 {
+    margin: 0;
+}
+
+.modal-content {
+    padding: 20px;
+    background: whitesmoke;
+}
+
+/* Form */
+.form-group {
+    height: 55px;
+}
+
+.form-input {
+    width: 97%;
+    padding: 5px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    display: block;
+    outline: none;
+}
+
+.form-label {
+    color: var(--primary-color);
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    color: whitesmoke;
+    background: var(--primary-color);
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+}
+
+button:hover {
+    filter: brightness(110%);
+}
+
+button:focus{
+    outline: none;
+}
+/* Media-Query: Large Smartphone(Vertical)*/
+@media screen and (max-width: 600px) {
+    .container{
+        flex-direction: column;
+    }
+}
