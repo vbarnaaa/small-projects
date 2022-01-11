@@ -28,7 +28,6 @@ function validate(nameValue, urlValue) {
         return false;
     }
     if (urlValue.match(regex)) {
-        alert('match');
         return true;
     }
     if (!urlValue.match(regex)) {
